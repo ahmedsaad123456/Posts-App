@@ -12,25 +12,21 @@ class PostRemoteDataSourceImpl implements PostRemoteDataSource {
   
   @override
   Future<List<PostModel>> getAllPosts() {
-    // TODO: implement getAllPosts
     throw UnimplementedError();
   }
   
   @override
   Future<Unit> addPost(PostModel postModel) {
-    // TODO: implement addPost
     throw UnimplementedError();
   }
 
   @override
   Future<Unit> deletePost(int postId) {
-    // TODO: implement deletePost
     throw UnimplementedError();
   }
 
   @override
   Future<Unit> updatePost(PostModel postModel) {
-    // TODO: implement updatePost
     throw UnimplementedError();
   }
   

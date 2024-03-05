@@ -20,19 +20,16 @@ class PostRepositoryImpl implements PostsRepository {
 
   @override
   Future<Either<Failure, Unit>> addPost(Post post) {
-    // TODO: implement addPost
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> deletePost(int id) {
-    // TODO: implement deletePost
     throw UnimplementedError();
   }
 
   @override
   Future<Either<Failure, Unit>> updatePost(Post post) {
-    // TODO: implement updatePost
     throw UnimplementedError();
   }
 }

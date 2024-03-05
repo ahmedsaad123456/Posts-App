@@ -9,13 +9,11 @@ abstract class PostLocalDataSource {
 class PostLocalDataSourceImpl implements PostLocalDataSource {
   @override
   Future<Unit> cachePosts(List<PostModel> postModels) {
-    // TODO: implement cachePosts
     throw UnimplementedError();
   }
 
   @override
   Future<List<PostModel>> getCachedPosts() {
-    // TODO: implement getCachedPosts
     throw UnimplementedError();
   }
 }
