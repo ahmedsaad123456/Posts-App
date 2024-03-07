@@ -48,6 +48,7 @@ class PostRepositoryImpl implements PostsRepository {
 
   @override
   Future<Either<Failure, Unit>> deletePost(int postId) async {
+    
     return await _getMessage(() {
       return remoteDataSource.deletePost(postId);
     });
