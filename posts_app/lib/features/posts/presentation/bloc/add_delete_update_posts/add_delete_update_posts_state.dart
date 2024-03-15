@@ -20,10 +20,10 @@ class ErrorAddDeleteUpdatePostState extends AddDeleteUpdatePostState {
   List<Object> get props => [message];
 }
 
-class MessageAddDeleteUpdatePostState extends AddDeleteUpdatePostState {
+class SuccessAddDeleteUpdatePostState extends AddDeleteUpdatePostState {
   final String message;
 
-  const MessageAddDeleteUpdatePostState({required this.message});
+  const SuccessAddDeleteUpdatePostState({required this.message});
 
   @override
   List<Object> get props => [message];
