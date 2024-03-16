@@ -1,25 +1,27 @@
 import 'package:dartz/dartz.dart';
 import 'package:posts_app/core/error/exception.dart';
 import 'package:posts_app/core/error/failure.dart';
+import 'package:posts_app/core/network/network_info.dart';
 import 'package:posts_app/features/posts/data/datasources/post_local_data_source.dart';
 import 'package:posts_app/features/posts/data/datasources/post_remote_data_source.dart';
 import 'package:posts_app/features/posts/data/models/post_model.dart';
 import 'package:posts_app/features/posts/domain/entities/post_entity.dart';
 import 'package:posts_app/features/posts/domain/repositories/post_repository.dart';
 
-
 typedef DeleteOrUpdateOrAddPost = Future<Unit> Function();
 
 class PostRepositoryImpl implements PostsRepository {
   final PostRemoteDataSource remoteDataSource;
   final PostLocalDataSource localDataSource;
+  final NetworkInfo networkInfo;
 
   PostRepositoryImpl(
-      {required this.remoteDataSource, required this.localDataSource});
-  
+      {required this.remoteDataSource,
+      required this.localDataSource,
+      required this.networkInfo});
+
   @override
   Future<Either<Failure, List<Post>>> getAllPosts() async {
-    var networkInfo;
     if (await networkInfo.isConnected) {
       try {
         final remotePosts = await remoteDataSource.getAllPosts();
@@ -37,7 +39,8 @@ class PostRepositoryImpl implements PostsRepository {
       }
     }
   }
-   @override
+
+  @override
   Future<Either<Failure, Unit>> addPost(Post post) async {
     final PostModel postModel = PostModel(title: post.title, body: post.body);
 
@@ -48,7 +51,6 @@ class PostRepositoryImpl implements PostsRepository {
 
   @override
   Future<Either<Failure, Unit>> deletePost(int postId) async {
-    
     return await _getMessage(() {
       return remoteDataSource.deletePost(postId);
     });
@@ -66,7 +68,6 @@ class PostRepositoryImpl implements PostsRepository {
 
   Future<Either<Failure, Unit>> _getMessage(
       DeleteOrUpdateOrAddPost deleteOrUpdateOrAddPost) async {
-        var networkInfo;
     if (await networkInfo.isConnected) {
       try {
         await deleteOrUpdateOrAddPost();
