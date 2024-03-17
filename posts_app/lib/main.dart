@@ -3,12 +3,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:posts_app/features/app_theme.dart';
 import 'package:posts_app/features/posts/presentation/bloc/add_delete_update_posts/add_delete_update_posts_bloc.dart';
 import 'package:posts_app/features/posts/presentation/bloc/posts/posts_bloc.dart';
+import 'package:posts_app/features/posts/presentation/pages/posts_page.dart';
 import 'injection_container.dart' as di;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await di.init();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
             debugShowCheckedModeBanner: false,
             theme: appTheme,
             title: 'Posts App',
-            // home: PostsPage()
+            home: const PostsPage()
             )
             );
   }
