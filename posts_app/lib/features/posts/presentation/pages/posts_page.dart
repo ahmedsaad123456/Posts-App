@@ -41,18 +41,18 @@ class PostsPage extends StatelessWidget {
   }
 
   Future<void> _onRefresh(BuildContext context) async {
-    BlocProvider.of<PostsBloc>(context).add(RefreshPostsEvent());
+    BlocProvider.of<PostsBloc>(context).add(RefreshAllPostsEvent());
   }
 
   Widget _buildFloatingBtn(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (_) => PostAddUpdatePage(
-                      isUpdatePost: false,
-                    )));
+        // Navigator.push(
+        //     context,
+        //     MaterialPageRoute(
+        //         builder: (_) => PostAddUpdatePage(
+        //               isUpdatePost: false,
+        //             )));
       },
       child: const Icon(Icons.add),
     );
