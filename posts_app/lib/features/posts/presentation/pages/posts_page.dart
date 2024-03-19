@@ -47,12 +47,12 @@ class PostsPage extends StatelessWidget {
   Widget _buildFloatingBtn(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        // Navigator.push(
-        //     context,
-        //     MaterialPageRoute(
-        //         builder: (_) => PostAddUpdatePage(
-        //               isUpdatePost: false,
-        //             )));
+         Navigator.push(
+             context,
+             MaterialPageRoute(
+                 builder: (_) => PostAddUpdatePage(
+                      isUpdatePost: false,
+                  )));
       },
       child: const Icon(Icons.add),
     );
