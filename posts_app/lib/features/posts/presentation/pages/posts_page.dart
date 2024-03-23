@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:posts_app/core/widgets/loading_widget.dart';
-import 'package:posts_app/features/posts/presentation/widgets/message_display_widget.dart';
-import 'package:posts_app/features/posts/presentation/widgets/post_list_widget.dart';
+import 'package:posts_app/features/posts/presentation/pages/post_add_update_page.dart';
+import 'package:posts_app/features/posts/presentation/widgets/post_page/message_display_widget.dart';
+import 'package:posts_app/features/posts/presentation/widgets/post_page/post_list_widget.dart';
 
 import '../bloc/posts/posts_bloc.dart';
 
@@ -50,8 +51,8 @@ class PostsPage extends StatelessWidget {
          Navigator.push(
              context,
              MaterialPageRoute(
-                 builder: (_) => PostAddUpdatePage(
-                      isUpdatePost: false,
+                 builder: (_) => const PostAddUpdatePage(isUpdate: false,
+                      
                   )));
       },
       child: const Icon(Icons.add),
