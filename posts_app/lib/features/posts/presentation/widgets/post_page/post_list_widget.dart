@@ -25,12 +25,12 @@ class PostListWidget extends StatelessWidget {
           ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 10),
           onTap: () {
-             Navigator.push(
-               context,
-               MaterialPageRoute(
-                 builder: (_) => PostDetailPage(post: posts[index]),
-               ),
-             );
+            //  Navigator.push(
+            //    context,
+            //    MaterialPageRoute(
+            //      builder: (_) => PostDetailPage(post: posts[index]),
+            //    ),
+            //  );
           },
         );
       },
